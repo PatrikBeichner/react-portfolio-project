@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Josefin+Sans&family=Lato&family=Metal+Mania&display=swap');
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,23 @@
     transform: rotate(360deg);
   }
 }
+
+.title {
+  font-size: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: lightblue;
+  text-shadow: 2px 2px darkgray;
+  opacity: 1; 
+}
+
+.subtitle {
+  position: absolute;
+  left: 0;
+  top: 58%;
+  width: 100%;
+  text-align: center;
+  color: lightblue; }
