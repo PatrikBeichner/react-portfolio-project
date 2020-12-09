@@ -5,9 +5,11 @@ import TourInfo from "./TourComponent";
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
+import Rentals from './RentalsComponent';
 // import Contact from './ContactComponent'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { TOURS } from '../shared/tours';
+import { RENTALS } from '../shared/rentals';
 
 
 class Main extends Component {
@@ -15,6 +17,7 @@ class Main extends Component {
         super(props);
         this.state = {
             tours: TOURS,
+            rentals: RENTALS,
         };
     }
 
@@ -44,12 +47,12 @@ class Main extends Component {
                 {/* <Header /> */}
                 <Switch>
                     <Route exact path='/home' render={() => <Home />} />
-                    {/* <Route path='/home' component={HomePage} /> */}
+                    {/* <Route path='/home' component={Home} />  */}
                     <Route exact path='/tours' render={() => <Directory tours={this.state.tours} />} />
-                    <Route path='/tours/:campsiteId' component={TourWithId} />
+                    <Route path='/tours/:tourId' component={TourWithId} />
                     <Route exact path='/aboutus' render={() => <About /> }  />
                     {/* <Route exact path='/aboutus' render={() => <About partners={this.state.partners} /> }  /> */}
-                    {/* <Route exact path='/contactus' component={Contact} /> */}
+                    <Route exact path='/rentals' component={Rentals} />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer /> 

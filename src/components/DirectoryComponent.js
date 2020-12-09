@@ -6,7 +6,7 @@ import Jumbo from "./JumbotronComponent";
 function RenderDirectoryItem({ tour }) {
   return (
     <Card>
-      <Link to={`/directory/${tour.id}`}>
+      <Link to={`/tours/${tour.id}`}>
         <CardImg width="100%" src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" />
         <CardImgOverlay>
           <CardTitle>{tour.name}</CardTitle>
