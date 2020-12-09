@@ -2,6 +2,8 @@ import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron,
 Button, Modal, ModalHeader, ModalBody,
 Form, FormGroup, Input, Label } from 'reactstrap';
+import styled from 'styled-components';
+import { Login } from '@styled-icons/entypo'
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -39,36 +41,36 @@ class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <Navbar light sticky="top" expand="sm">
+                <Navbar light  expand="sm">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src="/assets/images/flag.png" height="30" width="30" alt="NuCamp Logo" /></NavbarBrand>
+                        <NavbarBrand className="mr-2" href="/"><img className="flag" src="/assets/images/flag.png"  alt="NuCamp Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
+                            <Nav navbar >
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
-                                        <i className="fa-fa-home fa-lg" /> Home
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/directory">
-                                        <i className="fa-fa-list fa-lg" /> Directory
+                                        <i className="fa-fa-home fa-lg" /> home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/aboutus">
-                                        <i className="fa-fa-info fa-lg" /> About
+                                        <i className="fa-fa-list fa-lg" /> about us
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
-                                        <i className="fa-fa-address-card fa-lg" /> Contact Us
+                                    <NavLink className="nav-link" to="/tours">
+                                        <i className="fa-fa-info fa-lg" /> tours
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/rentals">
+                                        <i className="fa-fa-address-card fa-lg" /> rentals
                                     </NavLink>
                                 </NavItem>
                             </Nav>
                             <span className="navbar-text ml-auto">
                                 <Button outline onClick={this.toggleModal}>
-                                    <i className="fa fa-sign-in fa-lg" /> Login
+                                    <Login size="20" />  login
                                 </Button>
                             </span>
                         </Collapse>
