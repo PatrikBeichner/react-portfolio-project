@@ -27,11 +27,11 @@ p {
   height: 2rem;
 }
 
-.title {
+/* .title {
   font-size: 100px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 400%;
   width: 100%;
   text-align: center;
   color: lightblue;
@@ -46,7 +46,7 @@ p {
   width: 100%;
   text-align: center;
   color: lightblue;
-}
+} */
 
 .scroll {
   position: absolute;
@@ -108,6 +108,32 @@ p {
   text-shadow: 2px 2px darkgrey; 
 }
 
+.testTitle {
+  top: 50%;
+  color: green;
+  height: 55rem;
+}
+.title {
+  font-size: 100px;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: lightblue;
+  text-shadow: 2px 2px darkgray;
+  opacity: 1;
+}
+
+.subtitle {
+  position: absolute;
+  left: 40%;
+  top: 62%;
+  width: 100%;
+  text-align: center;
+  color: lightblue;
+}
+
 /* My borders showing different div  
 .col, div[class^="col-"], label[class^="col-"] {
     border: 1px solid red;
@@ -137,4 +163,4 @@ p {
     border: 3px solid purple;
     padding: 2px;
     margin: 5px;    
-} */
+}  */

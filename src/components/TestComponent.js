@@ -7,18 +7,24 @@ const par1 = "/assets/images/cliff-fjord2.jpg";
 const par2 = "/assets/images/fjord-ice.jpg";
 const par3 = "/assets/images/coast.jpg";
 
-function Home() {
+function Tester() {
   return (
     <div>
       <Header />
       <Parallax bgImage={par1} strength={200}>
-      <Container style={{ height: "55rem" }}>
+        <Container style={{ height: "55rem" }}>
           <div className="flex-center text-center">
             <Row className=" h-600">
                 <Col className="testTitle">
-                    <h1 className="title ">REISE <span className="font-weight-bold">NORGE</span></h1>
-                    <h5 className="subtitle ">personalized journeys through norway</h5>
+                    <h1 className="titler ">REISE <span className="font-weight-bold">NORGE</span></h1>
+                    <h5 className="subtitler ">personalized journeys through norway</h5>
                 </Col>
+              {/* <Col className="title">
+                <h1 className="  display-3 mb-2 mt-50">
+                  REISE <span className="font-weight-bold">NORGE</span>
+                </h1>
+                <h5 className="subtitle  mb-3 mt-1 text-center">personalized journeys through norway</h5>
+              </Col> */}
               <div className="scroll">
                 <span></span>
                 <span></span>
@@ -27,23 +33,6 @@ function Home() {
             </Row>
           </div>
         </Container>
-        {/* <div style={{ height: "55rem" }} className="container">
-          <div className="flex-center text-center">
-            <div className="row h-600">
-              <div>
-                <h1 className="title col display-3 mb-2 mt-50">
-                  REISE <span className="font-weight-bold">NORGE</span>
-                </h1>
-                <h5 className="subtitle col mb-3 mt-1 text-center">personalized journeys through norway</h5>
-              </div>
-              <div className="scroll">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </Parallax>
       <div className="container">
         <div className="row row-content align-items-center">
@@ -97,4 +86,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Tester;

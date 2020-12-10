@@ -11,7 +11,7 @@ function RenderTour({ tour }) {
   return (
     <div className="col-md-5 m-1">
       <Card>
-        <CardImg top src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9"/>
+        <CardImg top src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" />
         <CardBody>
           <CardText>{tour.description}</CardText>
           <p>hi2</p>
