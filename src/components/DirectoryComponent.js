@@ -1,18 +1,21 @@
 import React from "react";
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 
 function RenderDirectoryItem({ tour }) {
   return (
-    <Card>
+    
       <Link to={`/tours/${tour.id}`}>
+          <Card>
         <CardImg width="100%" src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" />
-        <CardImgOverlay>
+        <CardBody>
           <CardTitle>{tour.name}</CardTitle>
-        </CardImgOverlay>
+          <CardText>{tour.description}</CardText>
+        </CardBody>
+        </Card>
       </Link>
-    </Card>
+
   );
 }
 
@@ -21,7 +24,7 @@ function Directory(props) {
     return (
       <div key={tour.id} className="col-md-5 m-1">
         <RenderDirectoryItem tour={tour} />
-        <p>hi</p>
+        <p>hi from Directory</p>
       </div>
     );
   });
@@ -36,9 +39,9 @@ function Directory(props) {
               <BreadcrumbItem>
                 <Link to="/home">Home</Link>
               </BreadcrumbItem>
-              <BreadcrumbItem active>Directory</BreadcrumbItem>
+              <BreadcrumbItem active>tours</BreadcrumbItem>
             </Breadcrumb>
-            <h2>Directory</h2>
+            <h2>tours</h2>
             <hr />
           </div>
         </div>

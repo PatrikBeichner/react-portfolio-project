@@ -53,7 +53,7 @@ function TourInfo(props) {
           <div className="col">
             <Breadcrumb>
               <BreadcrumbItem>
-                <Link to="/directory">Directory</Link>
+                <Link to="/tours">tours</Link>
               </BreadcrumbItem>
               <BreadcrumbItem active>{props.tour.name}</BreadcrumbItem>
             </Breadcrumb>
