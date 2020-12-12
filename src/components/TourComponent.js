@@ -19,7 +19,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
-import BookingForm from './BookingComponent'
+import BookingForm from "./BookingComponent";
 // import { Control, LocalForm, Errors } from "react-redux-form";
 
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -30,7 +30,10 @@ function RenderTour({ tour }) {
   return (
     <div className="col m-1">
       <Card>
-        <CardImg top src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" />
+        <div class="embed-responsive embed-responsive-16by9">
+          <img alt="Card image cap" class="card-img-top embed-responsive-item" src={tour.image} />
+        </div>
+        {/* <CardImg top src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" /> */}
         <CardBody>
           <CardText className={tour.cname}>{tour.description}</CardText>
         </CardBody>
@@ -117,18 +120,17 @@ function RenderTour({ tour }) {
 //     });
 //   }
 
- 
 //   handleSubmit(event) {
 //     console.log("Current state is: " + JSON.stringify(this.state));
 //     alert("Current state is: " + JSON.stringify(this.state));
 //     event.preventDefault();
-    
+
 //   }
 
 //   resetForm = () => {
 //     this.setState(this.baseState)
 //   }
- 
+
 //   render() {
 //     return (
 //       <React.Fragment>
@@ -232,18 +234,19 @@ function TourInfo(props) {
                 <BreadcrumbItem>
                   <Link to="/tours">tours</Link>
                 </BreadcrumbItem>
-                <BreadcrumbItem active>{props.tour.name} {props.tour.type}</BreadcrumbItem>
+                <BreadcrumbItem active>
+                  {props.tour.name} {props.tour.type}
+                </BreadcrumbItem>
               </Breadcrumb>
               <h2 className={props.tour.cname}>{props.tour.name}</h2>
               <hr />
             </div>
           </div>
           <div className="row">
-            
             <RenderTour tour={props.tour} />
-            
+
             <div className="col-6">
-            <BookingForm book={props.tour}/>
+              <BookingForm book={props.tour} />
             </div>
           </div>
         </div>

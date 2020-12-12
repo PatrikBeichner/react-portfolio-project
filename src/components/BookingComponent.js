@@ -141,14 +141,22 @@ class BookingForm extends Component {
         // //   button = <LoginButton onClick={this.handleLoginClick} />;
         // }
 
+        var curr = new Date();
+        curr.setDate(curr.getDate());
+        var date = curr.toISOString().substr(0,10);
+
+        var cur = new Date();
+        cur.setDate(cur.getDate() + 1);
+        var dateMax = cur.toISOString().substr(0,10);
+
       return (
         <React.Fragment>
           <div className="row row-content">
-            <div className="col-md-10">
-              <h2 className={this.props.book.cname}>book {this.props.book.name} {this.props.book.type}</h2>
+            <div className="col-md-12">
+              <h2 className={this.props.book.cname}>book {this.props.book.type}</h2>
               <hr />
             </div>
-            <div className="col-md-10">
+            <div className="col-md-12">
               <Form onSubmit={this.handleSubmit}>
                 <FormGroup row>
                   <Label htmlFor="name" md={2}>
@@ -216,58 +224,69 @@ class BookingForm extends Component {
                       onChange={this.handleInputChange}></Input>
                   </Col>
                 </FormGroup>
-                <Row className="form-group" >
+                
                     {this.props.book.type === "tour" &&
-                        <div>
-                            <Label htmlFor="date" md={2}>
+                        <Row className="form-group" >
+                            <Label htmlFor="date" className="col-md-2">
                                 date
                             </Label>
-                            <Col md={10}>
+                            <Col >
                                 <Input
                                     type="date"
                                     id="date"
                                     name="date"
+                                    min={date}
                                     rows="12"
                                     value={this.state.date}
                                     onChange={this.handleInputChange}
+                                    className="col-md-12"
                                 >
                                 </Input>
                             </Col>
-                        </div>
+                        </Row>
                     }
                     {this.props.book.type === "rental" &&
-                        <div>
-                            <Label htmlFor="dateIn" md={2}>
-                                check-in
-                            </Label>
-                            <Col md={8}>
-                                <Input
-                                     type="date"
-                                     id="dateIn"
-                                     name="dateIn"
-                                     
-                                     value={this.state.dateIn}
-                                     onChange={this.handleInputChange}
-                                >
-                                </Input>
-                            </Col>
-                            <Label htmlFor="dateOut" md={2}>
-                                check-out
-                            </Label>
-                            <Col md={8}>
-                                <Input
-                                     type="date"
-                                     id="dateOut"
-                                     name="dateOut"
-                                     rows="12"
-                                     value={this.state.dateOut}
-                                     onChange={this.handleInputChange}
-                                >
-                                </Input>
-                            </Col>
-                        </div>
+                        <React.Fragment>
+                            <Row className="form-group" >
+                                <Label htmlFor="dateIn" className="col-md-2">
+                                    check-in
+                                </Label>
+                                <Col>
+                                    <Input
+                                        type="date"
+                                        id="dateIn"
+                                        name="dateIn"
+                                        min={date}
+                                        placeholder={date}
+                                        value={this.state.dateIn}
+                                        onChange={this.handleInputChange}
+                                        className="col-md-12"
+                                    >
+                                    </Input>
+                                </Col>
+                                </Row>
+                            <Row className="form-group" >
+                                <Label htmlFor="dateOut" className="col-md-2">
+                                    check-out
+                                </Label>
+                                <Col>
+                                    <Input
+                                        type="date"
+                                        id="dateOut"
+                                        name="dateOut"
+                                        rows="12"
+                                        min={dateMax}
+                                        placeholder={dateMax}
+                                        value={this.state.dateOut}
+                                        onChange={this.handleInputChange}
+                                        className="col-md-12"
+                                    >
+                                    </Input>
+                                </Col>
+                            </Row>
+                        </React.Fragment>
                     }
-                </Row>
+                
                 <FormGroup row>
                   <Col md={{ size: 10, offset: 2 }}>
                     <Button type="submit" color="dark">
