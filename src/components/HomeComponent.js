@@ -29,23 +29,6 @@ function Home() {
             </Row>
           </div>
         </Container>
-        {/* <div style={{ height: "55rem" }} className="container">
-          <div className="flex-center text-center">
-            <div className="row h-600">
-              <div>
-                <h1 className="title col display-3 mb-2 mt-50">
-                  REISE <span className="font-weight-bold">NORGE</span>
-                </h1>
-                <h5 className="subtitle col mb-3 mt-1 text-center">personalized journeys through norway</h5>
-              </div>
-              <div className="scroll">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </Parallax>
       <div className="container">
         <div className="row row-content align-items-center">

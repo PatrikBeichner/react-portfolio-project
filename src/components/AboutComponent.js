@@ -4,14 +4,6 @@ import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 
 function About(props) {
-  //   const partners = props.partners.map((partner) => {
-  //     return (
-  //       <Media tag="li" key={partner.id}>
-  //         <RenderPartner partner={partner} />
-  //       </Media>
-  //     );
-  //   });
-
   return (
     <React.Fragment>
       <Jumbo />

@@ -33,7 +33,6 @@ function Rentals({ rentals }) {
       {/* { showRural ? <Carousel rentals={rentals.filter(rental => rental.type = "rural")[0]} /> : null }
       { showUrban ? <Carousel rentals={rentals.filter(rental => rental.type = "urban")[0]} /> : null } */}
       {/* { showCarousel ? <Carousel rentals={rentals} /> : null } */}
-      {/* comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} */}
       </div>
     </div>
     </React.Fragment>
@@ -63,18 +62,6 @@ function Carousel({ rentals }) {
     return null;
   }
   
-  
-  // const directory = props.rentals.map((rental) => {
-  //   return (
-  //     <div key={rental.id} className="col-md-6 ">
-  //       <RenderDirectoryItem rentals={rentals} />
-  //       {/* <p>hi from Directory</p> */}
-  //     </div>
-  //   );
-  // });
-
-
-
     const directory = rentals.map((rental, index) => {
       return (
         <div

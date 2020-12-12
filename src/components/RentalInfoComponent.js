@@ -58,9 +58,7 @@ function RenderRental({ rental }) {
               <RenderRental rental={props.rental} />
               <BookingForm book={props.rental} />
               <div className="col-6">
-              {/* <BookingForm tour={props.tour}/> */}
               </div>
-              {/* <RenderComments comments={props.comments} /> */}
             </div>
           </div>
         </React.Fragment>

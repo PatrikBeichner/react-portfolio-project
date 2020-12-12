@@ -5,8 +5,6 @@ import Jumbo from "./JumbotronComponent";
 
 function RenderDirectoryItem({ tour }) {
   return (
-    
-      // <Link to={`/tours/${tour.id}`}>
         <div class="card mb-4 tourCard">
               <div class="embed-responsive embed-responsive-16by9">
                  <img alt="Card image cap" class="card-img-top embed-responsive-item" src={tour.image} />
@@ -20,14 +18,6 @@ function RenderDirectoryItem({ tour }) {
               </div>
         </div>
 
-        /* <Card>
-          <CardImg width="100%" src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" />
-          <CardBody>
-            <CardTitle>{tour.name}</CardTitle>
-            <CardText>{tour.description}</CardText>
-          </CardBody>
-        </Card> */
-      // </Link>
   );
 }
 

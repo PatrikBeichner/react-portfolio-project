@@ -102,7 +102,6 @@ class BookingForm extends Component {
       const target = event.target;
       const name = target.name;
       const value = target.value;
-      // const value = target.type === "checkbox" ? target.checked : target.value;
   
       this.setState({
         [name]: value,
