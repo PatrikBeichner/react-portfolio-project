@@ -14,8 +14,8 @@ function About(props) {
 
   return (
     <React.Fragment>
-        <Jumbo />
-      <div className="container">
+      <Jumbo />
+      <div className="container mb-5">
         <div className="row">
           <div className="col">
             <Breadcrumb>
@@ -32,18 +32,22 @@ function About(props) {
           <div className="col-sm-6">
             <h3>norway, by norwegians</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et pharetra lectus, a malesuada lacus. Vivamus suscipit neque at rhoncus
-              eleifend. Vestibulum et dolor sed urna rhoncus convallis. Ut euismod massa lobortis commodo rhoncus. Praesent placerat, sapien eget
-              mollis commodo, justo neque ultrices felis, ac sodales elit elit at ante. Quisque quis molestie mi. Ut laoreet ligula ut dictum sodales.
-              Ut pellentesque, diam sit amet dapibus pulvinar, turpis ex ultrices massa, eu ornare augue sem in neque.
+              Löksås ipsum nu tiden genom färdväg strand oss trevnadens, att fram blev kom tiden både när, för i det dunge genom vad blivit. Dimmhöljd
+              sin gamla samma har faktor samtidigt, helt hwila sista verkligen denna ordningens, bland annat sig tid som. Vi vad vi det rännil
+              vidsträckt, bäckasiner omfångsrik ta från verkligen tiden, gör nya dimmhöljd häst. Fram dimma regn ingalunda som sax oss enligt, när
+              björnbär ser annat när stora, bland sorgliga trevnadens varit sitt stora.
             </p>
             <p>
-              Donec pharetra facilisis massa. Sed finibus orci elit, nec fringilla ex convallis ac. Aliquam et mi nulla. Nunc eu justo at libero
-              ullamcorper volutpat a a orci. In accumsan, sem sed accumsan vulputate, neque elit tempus justo, eget porta sem nisi vel sapien.
-              Praesent ut rhoncus arcu. Curabitur a arcu aliquam, aliquet massa at, blandit erat. Vestibulum facilisis, neque eu laoreet ultricies,
-              metus ante luctus risus, non suscipit mauris lectus ut tortor. Etiam nec porttitor massa. Sed ut tristique velit. Sed imperdiet nisl
-              vitae ligula rutrum egestas non vitae arcu. Aliquam convallis elit nec dictum iaculis. Donec pellentesque elit mi, vestibulum aliquam
-              nunc sollicitudin id. Nam tempor velit ut eros bibendum, id aliquam est semper. Nam ut scelerisque quam. Maecenas et interdum ex.
+              Och göras nya sjö både genom därmed när det, gamla som ordningens kom dag tre kanske, mjuka hans sig sällan ta hela sin. På varit nya
+              verkligen nya vad för enligt vad del, är nya har för sax dock sjö blivit, hwila faktor där tre annan bland blev vemod. Denna trevnadens
+              nu sjö verkligen blivit stora åker söka hela att icke, faktor därmed som det björnbär dock det hela dimmhöljd enligt, stig när dag ännu
+              där sin bra gamla groda hela.
+            </p>
+            <p>
+              Upprätthållande omfångsrik smultron hav hwila se vi sista åker, precis som hav miljoner fram och att, sällan kunde bland varit vid dock
+              trevnadens. Upprätthållande gamla del groda ta om dunge göras dock, smultron regn ordningens ser gör sitt nya helt ingalunda, år tid
+              brunsås hela år upprätthållande tid. Ta hans strand så både sällan stora i, varit därmed blivit bra sjö blivit mjuka, blev från både
+              varit hans det.
             </p>
           </div>
           <div className="col-sm-6">

@@ -20,7 +20,7 @@ import { NavLink } from "react-router-dom";
 import { Login } from "@styled-icons/entypo";
 // import bgImage from '/assets/images/jumbFjord.jpg';
 
-const bgImage = "/assets/images/cliff-fjord2.jpg";
+const bgImage = "/assets/images/jumbFjord.jpg";
 
 class Jumbo extends Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class Jumbo extends Component {
         <Navbar color="light" light sticky="top" expand="sm">
           <div className="container">
             <NavbarBrand className="mr-2" href="/">
-              <img className="flag" src="/assets/images/flag.png" alt="NuCamp Logo" />
+              <img className="flag" src="/assets/images/flag.png" alt="Norwegian flag" />
             </NavbarBrand>
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.isNavOpen} navbar>

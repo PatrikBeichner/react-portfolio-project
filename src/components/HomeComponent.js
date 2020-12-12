@@ -1,6 +1,6 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-import {Container, Col, Row } from "reactstrap";
+import { Container, Col, Row } from "reactstrap";
 import Header from "./HeaderComponent";
 
 const par1 = "/assets/images/cliff-fjord2.jpg";
@@ -9,16 +9,18 @@ const par3 = "/assets/images/coast.jpg";
 
 function Home() {
   return (
-    <div>
+    <div className="mb-5">
       <Header />
       <Parallax bgImage={par1} strength={200}>
-      <Container style={{ height: "55rem" }}>
+        <Container style={{ height: "55rem" }}>
           <div className="flex-center text-center">
             <Row className=" h-600">
-                <Col className="testTitle">
-                    <h1 className="title ">REISE <span className="font-weight-bold">NORGE</span></h1>
-                    <h5 className="subtitle ">personalized journeys through norway</h5>
-                </Col>
+              <Col className="testTitle">
+                <h1 className="title ">
+                  REISE <span className="font-weight-bold">NORGE</span>
+                </h1>
+                <h5 className="subtitle ">personalized journeys through norway</h5>
+              </Col>
               <div className="scroll">
                 <span></span>
                 <span></span>
@@ -54,12 +56,11 @@ function Home() {
             <div className="media">
               <div className="media-body align-self-center">
                 <h3>find the real norway</h3>
-                <p className="d-none d-sm-block">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim varius pharetra. Nam varius imperdiet quam, nec bibendum
-                  lorem blandit sit amet. Nunc libero augue, convallis vel diam id, dictum volutpat ipsum. Nam orci lectus, posuere vitae feugiat nec,
-                  malesuada ut tortor. Ut lacinia leo at ultricies tempus. Cras sodales rutrum vehicula. Maecenas consectetur dui mattis luctus
-                  finibus. In rutrum pulvinar volutpat. Ut aliquet sed enim sit amet semper. Integer nisl ex, fermentum ut iaculis et, dictum sit amet
-                  quam. Pellentesque iaculis lorem pulvinar lectus consectetur feugiat.
+                <p className="d-none d-sm-block hometext">
+                  Löksås ipsum nu tiden genom färdväg strand oss trevnadens, att fram blev kom tiden både när, för i det dunge genom vad blivit.
+                  Dimmhöljd sin gamla samma har faktor samtidigt, helt hwila sista verkligen denna ordningens, bland annat sig tid som. Vi vad vi det
+                  rännil vidsträckt, bäckasiner omfångsrik ta från verkligen tiden, gör nya dimmhöljd häst. Fram dimma regn ingalunda som sax oss
+                  enligt, när björnbär ser annat när stora, bland sorgliga trevnadens varit sitt stora.
                 </p>
               </div>
             </div>
@@ -78,12 +79,11 @@ function Home() {
             <div className="media">
               <div className="media-body align-self-center">
                 <h3>trips planned by locals</h3>
-                <p className="d-none d-sm-block">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim varius pharetra. Nam varius imperdiet quam, nec bibendum
-                  lorem blandit sit amet. Nunc libero augue, convallis vel diam id, dictum volutpat ipsum. Nam orci lectus, posuere vitae feugiat nec,
-                  malesuada ut tortor. Ut lacinia leo at ultricies tempus. Cras sodales rutrum vehicula. Maecenas consectetur dui mattis luctus
-                  finibus. In rutrum pulvinar volutpat. Ut aliquet sed enim sit amet semper. Integer nisl ex, fermentum ut iaculis et, dictum sit amet
-                  quam. Pellentesque iaculis lorem pulvinar lectus consectetur feugiat.
+                <p className="d-none d-sm-block hometext">
+                  Ordningens sorgliga själv hav blivit mjuka sorgliga vad ingalunda samtidigt, precis bland göras är dimma ingalunda i år, omfångsrik
+                  tiden att gamla blivit vi kanske fram. Faktor upprätthållande kunde bra björnbär jäst miljoner jäst ska sorgliga, jäst både sitt på
+                  nya vemod där dimmhöljd. Därmed där så brunsås sin stig omfångsrik nu, faktor icke häst från sig precis träutensilierna, vad har lax
+                  stora ska kan.
                 </p>
               </div>
             </div>

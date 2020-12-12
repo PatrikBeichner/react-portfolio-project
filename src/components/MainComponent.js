@@ -46,7 +46,7 @@ class Main extends Component {
         {/* <Header /> */}
         <Switch>
           <Route exact path="/home" render={() => <Home />} />
-          <Route exact path="/test" render={() => <Tester />} />
+          <Route exact path="/test" render={() => <Tester rentals={this.state.rentals} />} />
 
           {/* <Route path='/home' component={Home} />  */}
           <Route exact path="/tours" render={() => <Directory tours={this.state.tours} />} />

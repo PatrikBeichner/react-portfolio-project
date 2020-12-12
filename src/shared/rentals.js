@@ -5,7 +5,7 @@ export const RENTALS = [
         image: "/assets/images/future.jpg",
         elevation: 1233,
         location: 'rural',
-        description: "travel deep into the norwegian forest"
+        description: "Löksås ipsum nu tiden genom färdväg strand oss trevnadens, att fram blev kom tiden både när, för i det dunge genom vad blivit."
     },
     {
         id: 1,
@@ -13,7 +13,7 @@ export const RENTALS = [
         image: "/assets/images/cabin.jpg",
         elevation: 877,
         location: 'rural',
-        description: "see the historic medieval stave churches"
+        description: "Vi vad vi det rännil vidsträckt, bäckasiner omfångsrik ta från verkligen tiden"
     },
     {
         id: 2,

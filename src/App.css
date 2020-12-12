@@ -7,7 +7,7 @@
 }
 
 nav ul {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 
 h1,
@@ -19,7 +19,12 @@ li {
 
 p {
   font-family: "Lato", sans-serif;
+  font-size: 1.1em;
 }
+
+/* .hometext {
+  font-size: 1.1rem;
+} */
 
 .flag {
   display: block;
@@ -27,6 +32,9 @@ p {
   height: 2rem;
 }
 
+.carousel-item > img { 
+  width: 100%; 
+}
 /* .title {
   font-size: 100px;
   position: absolute;
@@ -84,7 +92,7 @@ p {
 }
 
 
-.card:hover {
+.tourCard:hover {
   transform: scale(1.01);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
@@ -134,6 +142,20 @@ p {
   color: lightblue;
 }
 
+.metal {
+  font-family: "Metal Mania", serif;
+}
+
+/* 
+.tourCard {
+  width: 30rem;
+} */
+
+ /* a {
+  color: black;
+  text-decoration: none;
+} */
+
 /* My borders showing different div  
 .col, div[class^="col-"], label[class^="col-"] {
     border: 1px solid red;
@@ -163,4 +185,4 @@ p {
     border: 3px solid purple;
     padding: 2px;
     margin: 5px;    
-}  */
+}   */

@@ -1,87 +1,92 @@
-import React from "react";
-import { Parallax } from "react-parallax";
-import {Container, Col, Row } from "reactstrap";
-import Header from "./HeaderComponent";
+import React, { useState } from 'react';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 
-const par1 = "/assets/images/cliff-fjord2.jpg";
-const par2 = "/assets/images/fjord-ice.jpg";
-const par3 = "/assets/images/coast.jpg";
+const items = [
+  {
+    id: 1,
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    id: 2,
+    altText: 'Slide 2',
+    caption: 'Slide 2'
+  },
+  {
+    id: 3,
+    altText: 'Slide 3',
+    caption: 'Slide 3'
+  },
+  {
+    id: 4,
+    altText: 'Slide 4',
+    caption: 'Slide 4'
+  }
+];
 
-function Tester() {
+function Tester(props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  }
+
+  const slides = props.rentals.map((rental) => {
+    return (
+      <CarouselItem
+        className="custom-tag"
+        tag="div"
+        key={rental.id}
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+      >
+        <img style={{ width: "100%"}} src={rental.image} />
+        <CarouselCaption className="text-danger" captionText={rental.description} captionHeader={rental.location} />
+      </CarouselItem>
+    );
+  });
+
   return (
     <div>
-      <Header />
-      <Parallax bgImage={par1} strength={200}>
-        <Container style={{ height: "55rem" }}>
-          <div className="flex-center text-center">
-            <Row className=" h-600">
-                <Col className="testTitle">
-                    <h1 className="titler ">REISE <span className="font-weight-bold">NORGE</span></h1>
-                    <h5 className="subtitler ">personalized journeys through norway</h5>
-                </Col>
-              {/* <Col className="title">
-                <h1 className="  display-3 mb-2 mt-50">
-                  REISE <span className="font-weight-bold">NORGE</span>
-                </h1>
-                <h5 className="subtitle  mb-3 mt-1 text-center">personalized journeys through norway</h5>
-              </Col> */}
-              <div className="scroll">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </Row>
-          </div>
-        </Container>
-      </Parallax>
-      <div className="container">
-        <div className="row row-content align-items-center">
-          <div className="col-sm-4 order-sm-first col-md-3">
-            <h2 className="text-sm-right">the northern route</h2>
-          </div>
-          <div className="col py-5">
-            <div className="media">
-              <div className="media-body align-self-center">
-                <h3>find the real norway</h3>
-                <p className="d-none d-sm-block">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim varius pharetra. Nam varius imperdiet quam, nec bibendum
-                  lorem blandit sit amet. Nunc libero augue, convallis vel diam id, dictum volutpat ipsum. Nam orci lectus, posuere vitae feugiat nec,
-                  malesuada ut tortor. Ut lacinia leo at ultricies tempus. Cras sodales rutrum vehicula. Maecenas consectetur dui mattis luctus
-                  finibus. In rutrum pulvinar volutpat. Ut aliquet sed enim sit amet semper. Integer nisl ex, fermentum ut iaculis et, dictum sit amet
-                  quam. Pellentesque iaculis lorem pulvinar lectus consectetur feugiat.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Parallax bgImage={par2} strength={300}>
-        <div style={{ height: "55rem" }}></div>
-      </Parallax>
-      <div className="container">
-        <div className="row row-content align-items-center">
-          <div className="col-sm-4 order-sm-last col-md-3">
-            <h2 className="text-sm-right">hvor vil du gå?</h2>
-          </div>
-          <div className="col py-5">
-            <div className="media">
-              <div className="media-body align-self-center">
-                <h3>trips planned by locals</h3>
-                <p className="d-none d-sm-block">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim varius pharetra. Nam varius imperdiet quam, nec bibendum
-                  lorem blandit sit amet. Nunc libero augue, convallis vel diam id, dictum volutpat ipsum. Nam orci lectus, posuere vitae feugiat nec,
-                  malesuada ut tortor. Ut lacinia leo at ultricies tempus. Cras sodales rutrum vehicula. Maecenas consectetur dui mattis luctus
-                  finibus. In rutrum pulvinar volutpat. Ut aliquet sed enim sit amet semper. Integer nisl ex, fermentum ut iaculis et, dictum sit amet
-                  quam. Pellentesque iaculis lorem pulvinar lectus consectetur feugiat.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Parallax bgImage={par3} strength={300}>
-        <div style={{ height: "55rem" }}></div>
-      </Parallax>
+      <style>
+        {
+          `.custom-tag {
+              max-width: 50%;
+              height: 500px;
+              background: black;
+            }`
+        }
+      </style>
+      <Carousel
+        activeIndex={activeIndex}
+        next={next}
+        previous={previous}
+      >
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+      </Carousel>
     </div>
   );
 }

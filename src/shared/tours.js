@@ -1,11 +1,12 @@
 export const TOURS = [
     {
         id: 0,
-        name: "Forest Excursion",
+        name: "forest excursion",
         image: "/assets/images/forest.jpg",
         elevation: 1233,
         featured: false,
-        description: "travel deep into the norwegian forest"
+        description: "travel deep into the norwegian forest",
+        cName: "normal"
     },
     {
         id: 1,
@@ -13,7 +14,8 @@ export const TOURS = [
         image: "/assets/images/stave.jpg",
         elevation: 877,
         featured: false,
-        description: "see the historic medieval stave churches"
+        description: "see the historic medieval stave churches",
+        cName: "normal"
     },
     {
         id: 2,
@@ -21,7 +23,8 @@ export const TOURS = [
         image: "/assets/images/metal.jpg",
         elevation: 2901,
         featured: false,
-        description: "visit the heart of winter"
+        description: "visit the heart of winter",
+        cname: "metal"
     },
     {
         id: 3,
@@ -29,6 +32,7 @@ export const TOURS = [
         image: "/assets/images/flag-ocean.jpg",
         elevation: 42,
         featured: true,
-        description: "explore the coast"
+        description: "explore the coast",
+        cName: "normal"
     }
 ];
