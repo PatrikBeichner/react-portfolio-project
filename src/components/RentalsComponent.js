@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CarouselIndicators, CarouselCaption } from "reactstrap";
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CarouselIndicators, CarouselCaption, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 import styled from 'styled-components';
 import { ChevronLeft, ChevronRight } from '@styled-icons/entypo'
 
 function Rentals({ rentals }) {
-  const [showCarousel, setShowCarousel] = React.useState(false)
-  const toggler = () => setShowCarousel(!showCarousel)
+  const [showRural, setShowRural] = React.useState(false)
+  const [showUrban, setShowUrban] = React.useState(false)
+  const toggleRural = () => setShowRural(!showRural)
+  const toggleUrban = () => setShowUrban(!showUrban)
+
   return (
     <React.Fragment>
     <Jumbo />
@@ -20,11 +23,16 @@ function Rentals({ rentals }) {
             </BreadcrumbItem>
             <BreadcrumbItem active>about us</BreadcrumbItem>
           </Breadcrumb>
-          <h2>rentals | <a href="#" onClick={toggler}>rural</a> / <a href="#" onClick={toggler}>urban</a></h2>
+          <h2>rentals | <Button outline onClick={toggleRural}>rural</Button> / <Button outline onClick={toggleUrban}>urban</Button></h2>
           <hr />
         </div>
       </div>
-      { showCarousel ? <Carousel rentals={rentals} /> : null }
+      { showRural ? <Carousel rentals={rentals.filter(rentals => rentals.location === "rural")} /> : null }
+      { showUrban ? <Carousel rentals={rentals.filter(rentals => rentals.location === "urban")} /> : null }
+      {/* { showRural ? <Carousel rentals={rentals.filter(rental => rental.type = "rural")[0]} /> : null }
+      { showUrban ? <Carousel rentals={rentals.filter(rental => rental.type = "urban")[0]} /> : null } */}
+      {/* { showCarousel ? <Carousel rentals={rentals} /> : null } */}
+      {/* comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} */}
     </div>
     </React.Fragment>
   )
