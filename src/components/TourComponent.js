@@ -232,7 +232,7 @@ function TourInfo(props) {
                 <BreadcrumbItem>
                   <Link to="/tours">tours</Link>
                 </BreadcrumbItem>
-                <BreadcrumbItem active>{props.tour.name}</BreadcrumbItem>
+                <BreadcrumbItem active>{props.tour.name} {props.tour.type}</BreadcrumbItem>
               </Breadcrumb>
               <h2 className={props.tour.cname}>{props.tour.name}</h2>
               <hr />
@@ -243,7 +243,7 @@ function TourInfo(props) {
             <RenderTour tour={props.tour} />
             
             <div className="col-6">
-            <BookingForm tour={props.tour}/>
+            <BookingForm book={props.tour}/>
             </div>
           </div>
         </div>

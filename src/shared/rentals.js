@@ -1,66 +1,74 @@
 export const RENTALS = [
     {
         id: 0,
-        name: "Forest Excursion",
+        name: "modern getaway",
         image: "/assets/images/future.jpg",
         elevation: 1233,
         location: 'rural',
-        description: "Löksås ipsum nu tiden genom färdväg strand oss trevnadens, att fram blev kom tiden både när, för i det dunge genom vad blivit."
+        description: "Löksås ipsum nu tiden genom färdväg strand oss trevnadens.",
+        type: "rental",
     },
     {
         id: 1,
-        name:"stave churches",
+        name:"cabin",
         image: "/assets/images/cabin.jpg",
         elevation: 877,
         location: 'rural',
-        description: "Vi vad vi det rännil vidsträckt, bäckasiner omfångsrik ta från verkligen tiden"
+        description: "Vi vad vi det rännil vidsträckt, bäckasiner omfångsrik ta från verkligen tiden",
+        type: "rental",
     },
     {
         id: 2,
-        name:"true norwegian black metal",
+        name:"snowy cabin",
         image: "/assets/images/cabin-snow.jpg",
         elevation: 2901,
         location: 'rural',
-        description: "visit the heart of winter"
+        description: "Hav gör icke omfångsrik helt faktor mot och omfångsrik",
+        type: "rental",
     },
     {
         id: 3,
-        name:"coastal excursion",
+        name:"cabin by the fjord",
         image: "/assets/images/cabin-fjord.jpg",
         elevation: 42,
         location: 'rural',
-        description: "explore the coast"
+        description: "Tid genom varit träutensilierna i blivit dimma både",
+        type: "rental",
     },
     {
         id: 4,
-        name: "Forest Excursion",
+        name: "hus ved bukta",
         image: "/assets/images/houses.jpg",
         elevation: 1233,
         location: 'urban',
-        description: "travel deep into the norwegian forest"
+        description: "Om tid vi där söka rot räv gamla dimma sax",
+        type: "rental",
     },
     {
         id: 5,
-        name:"stave churches",
+        name:"mountain view house",
         image: "/assets/images/town.jpg",
         elevation: 877,
         location: 'urban',
-        description: "see the historic medieval stave churches"
+        description: "Ser dock åker sig färdväg bäckasiner oss från faktor häst",
+        type: "rental",
     },
     {
         id: 6,
-        name:"true norwegian black metal",
+        name:"oslo alley house",
         image: "/assets/images/city.jpg",
         elevation: 2901,
         location: 'urban',
-        description: "visit the heart of winter"
+        description: "Bland vi faktor denna vad miljoner samma jäst så vad åker söka",
+        type: "rental",
     },
     {
         id: 7,
-        name:"coastal excursion",
+        name:"trondheim getaway",
         image: "/assets/images/city-snow.jpg",
         elevation: 42,
         location: 'urban',
-        description: "explore the coast"
+        description: "Vid att verkligen regn gör träutensilierna nya vad sjö dimma björnbär nya",
+        type: "rental",
     }
 ];

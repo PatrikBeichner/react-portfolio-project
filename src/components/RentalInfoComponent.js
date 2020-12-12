@@ -49,7 +49,7 @@ function RenderRental({ rental }) {
                   <BreadcrumbItem>
                     <Link to="/rentals">rentals</Link>
                   </BreadcrumbItem>
-                  <BreadcrumbItem active>{props.rental.name}</BreadcrumbItem>
+                  <BreadcrumbItem active>{props.rental.name} {props.rental.type}</BreadcrumbItem>
                 </Breadcrumb>
                 <h2 className={props.rental.cname}>{props.rental.name}</h2>
                 <hr />
@@ -58,7 +58,7 @@ function RenderRental({ rental }) {
             <div className="row">
               
               <RenderRental rental={props.rental} />
-              
+              <BookingForm book={props.rental} />
               <div className="col-6">
               {/* <BookingForm tour={props.tour}/> */}
               </div>

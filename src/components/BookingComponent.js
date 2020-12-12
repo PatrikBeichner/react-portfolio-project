@@ -13,7 +13,7 @@ class BookingForm extends Component {
       super(props);
   
       this.state = {
-        tourName: this.props.tour.name,
+        bookName: this.props.book.name,
         name: "",
         phoneNum: "",
         email: "",
@@ -99,11 +99,21 @@ class BookingForm extends Component {
     }
    
     render() {
+        // const bookType = this.props.book.type;
+        // let date;
+        // if (bookType === 'tour') {
+        //     console.log("its a tour")
+        // //   button = <LogoutButton onClick={this.handleLogoutClick} />;
+        // } else {
+        //     console.log("it's a rental")
+        // //   button = <LoginButton onClick={this.handleLoginClick} />;
+        // }
+
       return (
         <React.Fragment>
           <div className="row row-content">
             <div className="col-md-10">
-              <h2 className={this.props.tour.cname}>book tour</h2>
+              <h2 className={this.props.book.cname}>book {this.props.book.name} {this.props.book.type}</h2>
               <hr />
             </div>
             <div className="col-md-10">

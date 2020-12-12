@@ -6,7 +6,8 @@ export const TOURS = [
         elevation: 1233,
         featured: false,
         description: "travel deep into the norwegian forest",
-        cName: "normal"
+        cName: "normal",
+        type: "tour",
     },
     {
         id: 1,
@@ -15,7 +16,8 @@ export const TOURS = [
         elevation: 877,
         featured: false,
         description: "see the historic medieval stave churches",
-        cName: "normal"
+        cName: "normal",
+        type: "tour",
     },
     {
         id: 2,
@@ -24,7 +26,8 @@ export const TOURS = [
         elevation: 2901,
         featured: false,
         description: "visit the heart of winter",
-        cname: "metal"
+        cname: "metal",
+        type: "tour",
     },
     {
         id: 3,
@@ -33,6 +36,7 @@ export const TOURS = [
         elevation: 42,
         featured: true,
         description: "explore the coast",
-        cName: "normal"
+        cName: "normal",
+        type: "tour",
     }
 ];
