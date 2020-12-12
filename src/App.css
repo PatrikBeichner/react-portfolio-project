@@ -78,12 +78,21 @@ p {
   transition-duration: 1s;
   transform: scale(1.08);
 }
+.carousel-indicator {
+  margin-top: 100px;
+  filter: invert(1);
+  background: pink;
+}
 
 @media (min-width: 576px) {
   .slide.active img {
     width: auto !important;
     height: 400px;
     max-height: 400px; } }
+
+.rntlImg {
+  height: 50%;
+}
 
 /* .title {
   font-size: 100px;

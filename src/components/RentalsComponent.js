@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from "reactstrap";
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CarouselIndicators } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight } from '@styled-icons/entypo'
 function Rentals({ rentals }) {
   const [current, setCurrent] = useState(0);
   const length = rentals.length;
+  const [animating, setAnimating] = useState(false);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -18,6 +19,11 @@ function Rentals({ rentals }) {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setCurrent(newIndex);
+  }
 
   if (!Array.isArray(rentals) || rentals.length <= 0) {
     return null;
@@ -33,6 +39,23 @@ function Rentals({ rentals }) {
   //   );
   // });
 
+
+
+    const directory = rentals.map((rental, index) => {
+      return (
+        <div
+          className={index === current ? 'slide active' : 'slide'}
+          key={index}
+        >
+          {index === current && (
+            <Link to={`/rentals/${rental.id}`}>
+              <img src={rental.image} alt='travel image' className='d-block mx-auto w-100' />
+            </Link>
+          )}
+        </div>
+      );
+    });
+  
 
   return (
     <React.Fragment>
@@ -52,10 +75,10 @@ function Rentals({ rentals }) {
         </div>
         <div className="row carous">
         {/* <section className='slider'> */}
-          
+        
           <ChevronLeft size="20" className='left-arrow' onClick={prevSlide} />
           <ChevronRight size="20" className='right-arrow' onClick={nextSlide} />
-          {rentals.map((rental, index) => {
+          {/* {rentals.map((rental, index) => {
             return (
               <div
                 className={index === current ? 'slide active' : 'slide'}
@@ -66,8 +89,11 @@ function Rentals({ rentals }) {
                 )}
               </div>
             );
-          })}
+            
+          })} */}
+          {directory}
         {/* </section> */}
+        <CarouselIndicators items={rentals} activeIndex={current} onClickHandler={goToIndex} className="indicator" />
         </div>
       </div>
     </React.Fragment>

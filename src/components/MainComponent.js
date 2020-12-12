@@ -6,6 +6,7 @@ import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
 import Rentals from "./RentalsComponent";
+import RentalInfo from "./RentalInfoComponent"
 import Tester from "./TestComponent";
 // import Contact from './ContactComponent'
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -41,11 +42,11 @@ class Main extends Component {
       );
     };
 
-    // const RentalWithId = ({ match }) => {
-    //   return (
-    //     <RentalInfo rental={this.state.rentals.filter((rental) => rental.id === +match.params.rentalID)[0]} />
-    //   )
-    // }
+    const RentalWithId = ({ match }) => {
+      return (
+        <RentalInfo rental={this.state.rentals.filter((rental) => rental.id === +match.params.rentalId)[0]} />
+      )
+    }
 
     return (
       <div>
@@ -62,6 +63,7 @@ class Main extends Component {
           <Route exact path="/aboutus" render={() => <About />} />
           {/* <Route exact path='/aboutus' render={() => <About partners={this.state.partners} /> }  /> */}
           <Route exact path="/rentals" render={() => <Rentals rentals={this.state.rentals} />} />
+          <Route path="/rentals/:rentalId" component={RentalWithId} />
           <Redirect to="/home" />
         </Switch>
         <Footer />
