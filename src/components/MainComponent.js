@@ -41,19 +41,27 @@ class Main extends Component {
       );
     };
 
+    // const RentalWithId = ({ match }) => {
+    //   return (
+    //     <RentalInfo rental={this.state.rentals.filter((rental) => rental.id === +match.params.rentalID)[0]} />
+    //   )
+    // }
+
     return (
       <div>
         {/* <Header /> */}
         <Switch>
           <Route exact path="/home" render={() => <Home />} />
-          <Route exact path="/test" render={() => <Tester rentals={this.state.rentals} />} />
+          {/* <Route exact path="/test" render={() => <Tester rentals={this.state.rentals} />} /> */}
+          <Route exact path="/test" render={() => <Tester  />} />
+
 
           {/* <Route path='/home' component={Home} />  */}
           <Route exact path="/tours" render={() => <Directory tours={this.state.tours} />} />
           <Route path="/tours/:tourId" component={TourWithId} />
           <Route exact path="/aboutus" render={() => <About />} />
           {/* <Route exact path='/aboutus' render={() => <About partners={this.state.partners} /> }  /> */}
-          <Route exact path="/rentals" component={Rentals} />
+          <Route exact path="/rentals" render={() => <Rentals rentals={this.state.rentals} />} />
           <Redirect to="/home" />
         </Switch>
         <Footer />
