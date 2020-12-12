@@ -25,8 +25,6 @@ import BookingForm from './BookingComponent'
 function RenderRental({ rental }) {
     return (
       <div className="col m-1">
-        
-        
         <Card>
           <CardImg top src={rental.image} alt={rental.name} className="embed-responsive embed-responsive-16by9" />
           <CardBody>

@@ -8,8 +8,8 @@ import { ChevronLeft, ChevronRight } from '@styled-icons/entypo'
 function Rentals({ rentals }) {
   const [showRural, setShowRural] = React.useState(false)
   const [showUrban, setShowUrban] = React.useState(false)
-  const toggleRural = () => setShowRural(!showRural)
-  const toggleUrban = () => setShowUrban(!showUrban)
+  const toggleRural = () => {setShowRural(!showRural); setShowUrban(false);}
+  const toggleUrban = () => {setShowUrban(!showUrban); setShowRural(false);}
 
   return (
     <React.Fragment>
@@ -21,18 +21,20 @@ function Rentals({ rentals }) {
             <BreadcrumbItem>
               <Link to="/home">home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem active>about us</BreadcrumbItem>
+            <BreadcrumbItem active>rentals</BreadcrumbItem>
           </Breadcrumb>
-          <h2>rentals | <Button outline onClick={toggleRural}>rural</Button> / <Button outline onClick={toggleUrban}>urban</Button></h2>
+          <h2>rentals | <a href="javascript:void(0)" onClick={toggleRural}>rural</a> / <a href="javascript:void(0)" onClick={toggleUrban}>urban</a></h2>
           <hr />
         </div>
       </div>
+      <div style={{ height: "450px" }}>
       { showRural ? <Carousel rentals={rentals.filter(rentals => rentals.location === "rural")} /> : null }
       { showUrban ? <Carousel rentals={rentals.filter(rentals => rentals.location === "urban")} /> : null }
       {/* { showRural ? <Carousel rentals={rentals.filter(rental => rental.type = "rural")[0]} /> : null }
       { showUrban ? <Carousel rentals={rentals.filter(rental => rental.type = "urban")[0]} /> : null } */}
       {/* { showCarousel ? <Carousel rentals={rentals} /> : null } */}
       {/* comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} */}
+      </div>
     </div>
     </React.Fragment>
   )
