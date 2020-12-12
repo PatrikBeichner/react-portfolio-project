@@ -1,16 +1,40 @@
 import React, { useState } from "react";
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CarouselIndicators } from "reactstrap";
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media, CarouselIndicators, CarouselCaption } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 import styled from 'styled-components';
 import { ChevronLeft, ChevronRight } from '@styled-icons/entypo'
 
-
-
 function Rentals({ rentals }) {
+  const [showCarousel, setShowCarousel] = React.useState(false)
+  const toggler = () => setShowCarousel(!showCarousel)
+  return (
+    <React.Fragment>
+    <Jumbo />
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link to="/home">home</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>about us</BreadcrumbItem>
+          </Breadcrumb>
+          <h2>rentals | <a href="#" onClick={toggler}>rural</a> / <a href="#" onClick={toggler}>urban</a></h2>
+          <hr />
+        </div>
+      </div>
+      { showCarousel ? <Carousel rentals={rentals} /> : null }
+    </div>
+    </React.Fragment>
+  )
+}
+
+function Carousel({ rentals }) {
   const [current, setCurrent] = useState(0);
   const length = rentals.length;
   const [animating, setAnimating] = useState(false);
+  
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -50,6 +74,7 @@ function Rentals({ rentals }) {
           {index === current && (
             <Link to={`/rentals/${rental.id}`}>
               <img src={rental.image} alt='travel image' className='d-block mx-auto w-100' />
+              <CarouselCaption captionText={rental.description} captionHeader={rental.name} />
             </Link>
           )}
         </div>
@@ -58,21 +83,21 @@ function Rentals({ rentals }) {
   
 
   return (
-    <React.Fragment>
-      <Jumbo />
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <Breadcrumb>
-              <BreadcrumbItem>
-                <Link to="/home">home</Link>
-              </BreadcrumbItem>
-              <BreadcrumbItem active>about us</BreadcrumbItem>
-            </Breadcrumb>
-            <h2>rentals</h2>
-            <hr />
-          </div>
-        </div>
+    // <React.Fragment>
+    //   <Jumbo />
+    //   <div className="container">
+    //     <div className="row">
+    //       <div className="col">
+    //         <Breadcrumb>
+    //           <BreadcrumbItem>
+    //             <Link to="/home">home</Link>
+    //           </BreadcrumbItem>
+    //           <BreadcrumbItem active>about us</BreadcrumbItem>
+    //         </Breadcrumb>
+    //         <h2>rentals | <a href="#" onclick={toggler}>rural</a> / <a href="#" onclick={toggler}>urban</a></h2>
+    //         <hr />
+    //       </div>
+    //     </div>
         <div className="row carous">
         {/* <section className='slider'> */}
         
@@ -95,8 +120,8 @@ function Rentals({ rentals }) {
         {/* </section> */}
         <CarouselIndicators items={rentals} activeIndex={current} onClickHandler={goToIndex} className="indicator" />
         </div>
-      </div>
-    </React.Fragment>
+    //   </div>
+    // </React.Fragment>
   );
 }
 

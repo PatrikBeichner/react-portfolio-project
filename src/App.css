@@ -51,7 +51,7 @@ p {
 .right-arrow {
   position: absolute;
   top: 50%;
-  right: 52px;
+  right: 130px;
   color: #000;
   z-index: 10;
   cursor: pointer;
@@ -61,7 +61,7 @@ p {
 .left-arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
+  left: 130px;
   color: #000;
   z-index: 10;
   cursor: pointer;
