@@ -223,7 +223,6 @@ class BookingForm extends Component {
                       onChange={this.handleInputChange}></Input>
                   </Col>
                 </FormGroup>
-                
                     {this.props.book.type === "tour" &&
                         <Row className="form-group" >
                             <Label htmlFor="date" className="col-md-2">
@@ -256,7 +255,7 @@ class BookingForm extends Component {
                                         id="dateIn"
                                         name="dateIn"
                                         min={date}
-                                        placeholder={date}
+
                                         value={this.state.dateIn}
                                         onChange={this.handleInputChange}
                                         className="col-md-12"
@@ -275,7 +274,7 @@ class BookingForm extends Component {
                                         name="dateOut"
                                         rows="12"
                                         min={dateMax}
-                                        placeholder={dateMax}
+
                                         value={this.state.dateOut}
                                         onChange={this.handleInputChange}
                                         className="col-md-12"
@@ -285,7 +284,6 @@ class BookingForm extends Component {
                             </Row>
                         </React.Fragment>
                     }
-                
                 <FormGroup row>
                   <Col md={{ size: 10, offset: 2 }}>
                     <Button type="submit" color="dark">
