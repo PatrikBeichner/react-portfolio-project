@@ -6,7 +6,8 @@ import {
   FormGroup,
   Input,
   Col,
-  Row
+  Row,
+  FormFeedback
 } from "reactstrap";
 
 
@@ -47,6 +48,9 @@ class BookingForm extends Component {
           phoneNum: false,
           email: false,
           guests: false,
+          date: false,
+          dateIn: false,
+          dateOut: false,
         }
       };
   
@@ -56,47 +60,50 @@ class BookingForm extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
   
-  //   validate(name, phoneNum, email, guests) {
+    validate(name, phoneNum, email, guests, date, dateIn, dateOut) {
   
-  //     const errors = {
-  //         name: '',
-  //         phoneNum: '',
-  //         email: '',
-  //         guests: ''
-  //     };
+      const errors = {
+          name: '',
+          phoneNum: '',
+          email: '',
+          guests: '',
+          date: '',
+          dateIn: '',
+          dateOut: '',
+      };
   
-  //     if (this.state.touched.name) {
-  //         if (name.length < 2) {
-  //             errors.name = 'name must be at least 2 characters.';
-  //         } else if (name.length > 25) {
-  //             errors.name = 'name must be 15 or less characters.';
-  //         }
-  //     }
+      if (this.state.touched.name) {
+          if (name.length < 2) {
+              errors.name = 'name must be at least 2 characters.';
+          } else if (name.length > 25) {
+              errors.name = 'name must be 15 or less characters.';
+          }
+      }
   
-  //     const reg = /^\d+$/;
-  //     if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
-  //         errors.phoneNum = 'The phone number should contain only numbers.';
-  //     }
+      const reg = /^\d+$/;
+      if (this.state.touched.phoneNum && !reg.test(phoneNum)) {
+          errors.phoneNum = 'The phone number should contain only numbers.';
+      }
   
-  //     if (this.state.touched.email && !email.includes('@')) {
-  //         errors.email = 'Email should contain a @';
-  //     }
-  //     if (this.state.touched.lastName) {
-  //       if (lastName.length < 2) {
-  //           errors.lastName = 'Last name must be at least 2 characters.';
-  //       } else if (lastName.length > 15) {
-  //           errors.lastName = 'Last name must be 15 or less characters.';
-  //       }
-  //   }
+      if (this.state.touched.email && !email.includes('@')) {
+          errors.email = 'Email should contain an @';
+      }
+    //   if (this.state.touched.lastName) {
+    //     if (lastName.length < 2) {
+    //         errors.lastName = 'Last name must be at least 2 characters.';
+    //     } else if (lastName.length > 15) {
+    //         errors.lastName = 'Last name must be 15 or less characters.';
+    //     }
+    // }
   
-  //     return errors;
-  // }
+      return errors;
+  }
   
-  // handleBlur = (field) => () => {
-  //     this.setState({
-  //         touched: {...this.state.touched, [field]: true}
-  //     });
-  // }
+  handleBlur = (field) => () => {
+      this.setState({
+          touched: {...this.state.touched, [field]: true}
+      });
+  }
   
     handleInputChange(event) {
       const target = event.target;
@@ -121,6 +128,8 @@ class BookingForm extends Component {
     }
    
     render() {
+      const errors = this.validate(this.state.name, this.state.phoneNum, this.state.email, this.state.guests, this.state.date, this.state.dateIn, this.state.dateOut);
+
         const bookType = this.props.book.type;
         const renderDate = (bookType) => {
             if (bookType === 'tour') {
@@ -168,8 +177,11 @@ class BookingForm extends Component {
                       name="name"
                       placeholder="name"
                       value={this.state.name}
+                      invalid={errors.name}
+                      onBlur={this.handleBlur("name")}
                       onChange={this.handleInputChange}
                     />
+                    <FormFeedback>{errors.name}</FormFeedback>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -183,8 +195,11 @@ class BookingForm extends Component {
                       name="phoneNum"
                       placeholder="phone number"
                       value={this.state.phoneNum}
+                      invalid={errors.phoneNum}
+                      onBlur={this.handleBlur("phoneNum")}
                       onChange={this.handleInputChange}
                     />
+                    <FormFeedback>{errors.phoneNum}</FormFeedback>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -192,7 +207,17 @@ class BookingForm extends Component {
                     email
                   </Label>
                   <Col md={10}>
-                    <Input type="email" id="email" name="email" placeholder="email" value={this.state.email} onChange={this.handleInputChange} />
+                    <Input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      placeholder="email" 
+                      value={this.state.email}
+                      invalid={errors.email}
+                      onBlur={this.handleBlur("email")}
+                      onChange={this.handleInputChange} 
+                      />
+                      <FormFeedback>{errors.email}</FormFeedback>
                   </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -236,6 +261,8 @@ class BookingForm extends Component {
                                     min={date}
                                     rows="12"
                                     value={this.state.date}
+                                    invalid={errors.date}
+                                    onBlur={this.handleBlur("date")}
                                     onChange={this.handleInputChange}
                                     className="col-md-12"
                                 >

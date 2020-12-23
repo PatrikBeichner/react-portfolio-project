@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Parallax } from "react-parallax";
 import { Container, Col, Row } from "reactstrap";
 import Header from "./HeaderComponent";
@@ -8,14 +8,19 @@ const par2 = "/assets/images/fjord-ice.jpg";
 const par3 = "/assets/images/coast.jpg";
 
 function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="mb-5">
       <Header />
       <Parallax bgImage={par1} strength={200}>
         <Container style={{ height: "55rem" }}>
-          <div className="flex-center text-center">
-            <Row className=" h-600">
-              <Col className="testTitle">
+          <div>
+            <Row className="h-600">
+              <Col className="testTitle md-3">
                 <h1 className="title ">
                   REISE <span className="font-weight-bold">NORGE</span>
                 </h1>

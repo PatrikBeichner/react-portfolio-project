@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import {
   Card,
   CardImg,
@@ -223,6 +223,11 @@ function RenderTour({ tour }) {
 // }
 
 function TourInfo(props) {
+
+  useEffect(() => {
+    window.scrollTo(0, 250)
+  }, [])
+
   if (props.tour) {
     return (
       <React.Fragment>
