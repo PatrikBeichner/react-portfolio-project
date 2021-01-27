@@ -1,76 +1,90 @@
-import React, { useState } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from 'reactstrap';
+// 
 
-const items = [
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+import React, { useEffect } from "react";
+import { Parallax } from "react-parallax";
+import { Container, Col, Row } from "reactstrap";
+import Header from "./HeaderComponent";
 
-const Tester = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
+const par1 = "/assets/images/cliff-fjord2.jpg";
+const par2 = "/assets/images/fjord-ice.jpg";
+const par3 = "/assets/images/coast.jpg";
 
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
-  }
+function Home() {
 
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  }
-
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  }
-
-  const slides = items.map((item) => {
-    return (
-      <CarouselItem
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-        key={item.src}
-      >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-      </CarouselItem>
-    );
-  });
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-    >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-      {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-    </Carousel>
+    <div className="mb-5">
+      <Header />
+      <Parallax bgImage={par1} strength={200}>
+        <Container style={{ height: "55rem" }}>
+          <div>
+            <Row className="h-600">
+              <div className="col-md-3">
+                <h1 className="title ">
+                  REISE <span className="font-weight-bold">NORGE</span>
+                </h1>
+                <h5 className="subtitle ">personalized journeys through norway</h5>
+              </div>
+              <div className="scroll">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </Row>
+          </div>
+        </Container>
+      </Parallax>
+      <div className="container">
+        <div className="row row-content align-items-center">
+          <div className="col-sm-4 order-sm-first col-md-3">
+            <h2 className="text-sm-right">the northern route</h2>
+          </div>
+          <div className="col py-5">
+            <div className="media">
+              <div className="media-body align-self-center">
+                <h3>find the real norway</h3>
+                <p className="d-none d-sm-block hometext">
+                  Löksås ipsum nu tiden genom färdväg strand oss trevnadens, att fram blev kom tiden både när, för i det dunge genom vad blivit.
+                  Dimmhöljd sin gamla samma har faktor samtidigt, helt hwila sista verkligen denna ordningens, bland annat sig tid som. Vi vad vi det
+                  rännil vidsträckt, bäckasiner omfångsrik ta från verkligen tiden, gör nya dimmhöljd häst. Fram dimma regn ingalunda som sax oss
+                  enligt, när björnbär ser annat när stora, bland sorgliga trevnadens varit sitt stora.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Parallax bgImage={par2} strength={300}>
+        <div style={{ height: "55rem" }}></div>
+      </Parallax>
+      <div className="container">
+        <div className="row row-content align-items-center">
+          <div className="col-sm-4 order-sm-last col-md-3">
+            <h2 className="text-sm-right">hvor vil du gå?</h2>
+          </div>
+          <div className="col py-5">
+            <div className="media">
+              <div className="media-body align-self-center">
+                <h3>trips planned by locals</h3>
+                <p className="d-none d-sm-block hometext">
+                  Ordningens sorgliga själv hav blivit mjuka sorgliga vad ingalunda samtidigt, precis bland göras är dimma ingalunda i år, omfångsrik
+                  tiden att gamla blivit vi kanske fram. Faktor upprätthållande kunde bra björnbär jäst miljoner jäst ska sorgliga, jäst både sitt på
+                  nya vemod där dimmhöljd. Därmed där så brunsås sin stig omfångsrik nu, faktor icke häst från sig precis träutensilierna, vad har lax
+                  stora ska kan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Parallax bgImage={par3} strength={300}>
+        <div style={{ height: "55rem" }}></div>
+      </Parallax>
+    </div>
   );
 }
 
-export default Tester;
+export default Home;

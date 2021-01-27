@@ -4,18 +4,8 @@ import {
   CardImg,
   CardText,
   CardBody,
-  CardTitle,
   Breadcrumb,
   BreadcrumbItem,
-  Button,
-  Label,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Input,
-  Col,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";

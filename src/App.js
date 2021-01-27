@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-//import Main from './components/MainComponent';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './components/HomeComponent';
-import Header from './components/HeaderComponent';
 import Main from './components/MainComponent';
 import './App.css';
 

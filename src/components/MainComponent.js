@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Directory from "./DirectoryComponent";
 import About from "./AboutComponent";
 import TourInfo from "./TourComponent";
-import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
 import Rentals from "./RentalsComponent";
@@ -46,7 +45,7 @@ class Main extends Component {
         {/* <Header /> */}
         <Switch>
           <Route exact path="/home" render={() => <Home />} />
-          {/* <Route exact path="/test" render={() => <Tester rentals={this.state.rentals} />} /> */}
+          <Route exact path="/test" render={() => <Tester rentals={this.state.rentals} />} />
           <Route exact path="/test" render={() => <Tester  />} />
           <Route exact path="/tours" render={() => <Directory tours={this.state.tours} />} />
           <Route path="/tours/:tourId" component={TourWithId} />

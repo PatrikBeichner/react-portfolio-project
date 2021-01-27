@@ -20,7 +20,7 @@ function Home() {
         <Container style={{ height: "55rem" }}>
           <div>
             <Row className="h-600">
-              <Col className="testTitle md-3">
+              <Col className="testTitle md-1">
                 <h1 className="title ">
                   REISE <span className="font-weight-bold">NORGE</span>
                 </h1>

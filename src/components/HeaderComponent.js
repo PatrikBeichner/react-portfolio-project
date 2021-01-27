@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron,
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, 
 Button, Modal, ModalHeader, ModalBody,
 Form, FormGroup, Input, Label } from 'reactstrap';
 import styled from 'styled-components';
@@ -77,21 +77,21 @@ class Header extends Component {
                     </div>
                 </Navbar>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalHeader toggle={this.toggleModal}>login</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleLogin}>
                             <FormGroup>
-                                <Label htmlFor="username">Username</Label>
+                                <Label htmlFor="username">username</Label>
                                 <Input type="text" id="username" name="username" innerRef={input => this.username = input} />
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="password">Password</Label>
+                                <Label htmlFor="password">password</Label>
                                 <Input type="password" id="password" name="password" innerRef={input => this.password = input} />
                             </FormGroup>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" name="remember" innerRef={input => this.remember = input} />
-                                    Remember me
+                                    remember me
                                 </Label>
                             </FormGroup>
                             <Button type="submit" value="submit" color="primary">Login</Button>

@@ -136,18 +136,8 @@ class BookingForm extends Component {
                 console.log("its a tour")
         } else {
             console.log("it's a rental")
-            // //   button = <LoginButton onClick={this.handleLoginClick} />;
             };
         }
-        // const bookType = this.props.book.type;
-        // let date;
-        // if (bookType === 'tour') {
-        //     console.log("its a tour")
-        // //   button = <LogoutButton onClick={this.handleLogoutClick} />;
-        // } else {
-        //     console.log("it's a rental")
-        // //   button = <LoginButton onClick={this.handleLoginClick} />;
-        // }
 
         var curr = new Date();
         curr.setDate(curr.getDate());

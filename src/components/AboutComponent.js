@@ -1,5 +1,5 @@
 import React from "react";
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from "reactstrap";
+import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import Jumbo from "./JumbotronComponent";
 
@@ -44,7 +44,7 @@ function About(props) {
           </div>
           <div className="col-sm-6">
             <div>
-              <img src="/assets/images/tallFlag.jpg" class="img-fluid" />
+              <img src="/assets/images/tallFlag.jpg" alt="the norwegian flag" class="img-fluid" />
             </div>
           </div>
         </div>
@@ -53,20 +53,20 @@ function About(props) {
   );
 }
 
-function RenderPartner({ partner }) {
-  if (partner) {
-    return (
-      <React.Fragment>
-        <Media object src={partner.image} alt={partner.name} width="150" />
-        <Media body className="ml-5 mb-4">
-          <Media heading>{partner.name}</Media>
-          {partner.description}
-        </Media>
-      </React.Fragment>
-    );
-  } else {
-    return <div />;
-  }
-}
+// function RenderPartner({ partner }) {
+//   if (partner) {
+//     return (
+//       <React.Fragment>
+//         <Media object src={partner.image} alt={partner.name} width="150" />
+//         <Media body className="ml-5 mb-4">
+//           <Media heading>{partner.name}</Media>
+//           {partner.description}
+//         </Media>
+//       </React.Fragment>
+//     );
+//   } else {
+//     return <div />;
+//   }
+// }
 
 export default About;

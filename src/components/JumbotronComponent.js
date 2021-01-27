@@ -18,7 +18,6 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { Login } from "@styled-icons/entypo";
-// import bgImage from '/assets/images/jumbFjord.jpg';
 
 const bgImage = "/assets/images/jumbFjord.jpg";
 
@@ -105,25 +104,25 @@ class Jumbo extends Component {
           </div>
         </Jumbotron>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+          <ModalHeader toggle={this.toggleModal}>login</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.handleLogin}>
               <FormGroup>
-                <Label htmlFor="username">Username</Label>
+                <Label htmlFor="username">username</Label>
                 <Input type="text" id="username" name="username" innerRef={(input) => (this.username = input)} />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">password</Label>
                 <Input type="password" id="password" name="password" innerRef={(input) => (this.password = input)} />
               </FormGroup>
               <FormGroup check>
                 <Label check>
                   <Input type="checkbox" name="remember" innerRef={(input) => (this.remember = input)} />
-                  Remember me
+                  remember me
                 </Label>
               </FormGroup>
               <Button type="submit" value="submit" color="primary">
-                Login
+                login
               </Button>
             </Form>
           </ModalBody>
