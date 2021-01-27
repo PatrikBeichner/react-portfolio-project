@@ -11,9 +11,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { TOURS } from '../shared/tours';
 import { RENTALS } from '../shared/rentals';
 
-// TODO: [x] styling on carousel, booking form, rentals booking page
-// TODO: [x] form validation on booking and login
-
 class Main extends Component {
   constructor(props) {
     super(props);

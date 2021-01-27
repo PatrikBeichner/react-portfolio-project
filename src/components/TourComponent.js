@@ -11,7 +11,6 @@ function RenderTour({ tour }) {
         <div class="embed-responsive embed-responsive-16by9">
           <img alt={tour.name} class="card-img-top embed-responsive-item" src={tour.image} />
         </div>
-        {/* <CardImg top src={tour.image} alt={tour.name} className="embed-responsive embed-responsive-16by9" /> */}
         <CardBody>
           <CardText className={tour.cname}>{tour.description}</CardText>
         </CardBody>

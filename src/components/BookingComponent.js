@@ -1,24 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Label, Form, FormGroup, Input, Col, Row, FormFeedback } from 'reactstrap';
 
-// function DateType({book}) {
-//     return (
-//     <FormGroup row>
-//         <Label htmlFor="date" md={2}>
-//         date
-//         </Label>
-//         <Col md={10}>
-//         <Input
-//             type="date"
-//             id="date"
-//             name="date"
-//             rows="12"
-//             value={this.state.date}
-//             onChange={this.handleInputChange}></Input>
-//         </Col>
-//     </FormGroup>
-//     );
-// }
 class BookingForm extends Component {
   constructor(props) {
     super(props);

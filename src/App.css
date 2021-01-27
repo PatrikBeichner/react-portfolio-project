@@ -22,10 +22,6 @@ p {
   font-size: 1.1em;
 }
 
-/* .hometext {
-  font-size: 1.1rem;
-} */
-
 .flag {
   display: block;
   max-width: 100%;
@@ -41,12 +37,6 @@ p {
   margin-top: 5em;
   margin-bottom: 10em;
 }
-
-/* .cimage {
-  width: 1000px;
-  height: 100%;
-  border-radius: 10px;
-} */
 
 .right-arrow {
   position: absolute;
@@ -96,52 +86,9 @@ p {
   height: 50%;
 }
 
-/* .carousel-caption {
-  
-  color: white;
-  
-  
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  
-} */
-
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
-
-  /* text-align: center;
-  padding: 10px 40px 30px;
-  width: 100%;
-  box-sizing: border-box;
-  color: white;
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 20%, rgba(0,0,0,1) 100%); 
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); 
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
-  background: -o-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
-  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
-  background: linear-gradient(to bottom,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );  */
 }
-
-/* .title {
-  font-size: 100px;
-  position: absolute;
-  left: 50%;
-  top: 400%;
-  width: 100%;
-  text-align: center;
-  color: lightblue;
-  text-shadow: 2px 2px darkgray;
-  opacity: 1;
-}
-
-.subtitle {
-  position: absolute;
-  left: 0;
-  top: 58%;
-  width: 100%;
-  text-align: center;
-  color: lightblue;
-} */
 
 .scroll {
   position: absolute;
@@ -232,16 +179,6 @@ p {
 .metal {
   font-family: 'Metal Mania', serif;
 }
-
-/* 
-.tourCard {
-  width: 30rem;
-} */
-
-/* a {
-  color: black;
-  text-decoration: none;
-} */
 
 /* My borders showing different div .col,
 div[class^='col-'],
