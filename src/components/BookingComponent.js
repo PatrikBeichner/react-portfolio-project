@@ -240,6 +240,7 @@ class BookingForm extends Component {
                       type="date"
                       id="date"
                       name="date"
+                      placeholder="dd/mm/yyyy"
                       min={date}
                       rows="12"
                       value={this.state.date}
@@ -261,8 +262,11 @@ class BookingForm extends Component {
                         type="date"
                         id="dateIn"
                         name="dateIn"
+                        placeholder="dd/mm/yyyy"
                         min={date}
                         value={this.state.dateIn}
+                        invalid={errors.date}
+                        onBlur={this.handleBlur('dateIn')}
                         onChange={this.handleInputChange}
                         className="col-md-12"></Input>
                     </Col>
@@ -276,9 +280,12 @@ class BookingForm extends Component {
                         type="date"
                         id="dateOut"
                         name="dateOut"
+                        placeholder="dd/mm/yyyy"
                         rows="12"
                         min={dateMax}
                         value={this.state.dateOut}
+                        invalid={errors.date}
+                        onBlur={this.handleBlur('dateOut')}
                         onChange={this.handleInputChange}
                         className="col-md-12"></Input>
                     </Col>
