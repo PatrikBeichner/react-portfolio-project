@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Josefin+Sans&family=Lato&family=Metal+Mania&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Josefin+Sans&family=Lato&family=Metal+Mania&display=swap');
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,11 +14,11 @@ h1,
 h2,
 h3,
 li {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 p {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.1em;
 }
 
@@ -88,7 +88,9 @@ p {
   .slide.active img {
     width: auto !important;
     height: 400px;
-    max-height: 400px; } }
+    max-height: 400px;
+  }
+}
 
 .rntlImg {
   height: 50%;
@@ -104,8 +106,8 @@ p {
 } */
 
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5)
-  
+  background-color: rgba(0, 0, 0, 0.5);
+
   /* text-align: center;
   padding: 10px 40px 30px;
   width: 100%;
@@ -118,7 +120,6 @@ p {
   background: -ms-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
   background: linear-gradient(to bottom,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );  */
-
 }
 
 /* .title {
@@ -168,21 +169,6 @@ p {
   animation-delay: -0.4s;
 }
 
-.card {
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow, 0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  padding: 14px 5px 18px 5px;
-  /*cursor: pointer;*/
-}
-
-
-.tourCard:hover {
-  transform: scale(1.01);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-}
-
 @keyframes animate {
   0% {
     opacity: 0;
@@ -197,9 +183,24 @@ p {
   }
 }
 
+.card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12), 0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 5px 18px 5px;
+  /*cursor: pointer;*/
+}
+
+.tourCard:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
 .jumText {
   color: lightblue;
-  text-shadow: 2px 2px darkgrey; 
+  text-shadow: 2px 2px darkgrey;
 }
 
 .testTitle {
@@ -229,7 +230,7 @@ p {
 }
 
 .metal {
-  font-family: "Metal Mania", serif;
+  font-family: 'Metal Mania', serif;
 }
 
 /* 
@@ -237,7 +238,7 @@ p {
   width: 30rem;
 } */
 
- /* a {
+/* a {
   color: black;
   text-decoration: none;
 } */
