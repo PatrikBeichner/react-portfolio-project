@@ -6,10 +6,7 @@
   }
 }
 
-nav ul {
-  font-size: 1.25em;
-}
-
+/* General Styling */
 h1,
 h2,
 h3,
@@ -21,6 +18,10 @@ p {
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
 }
+/* Navbar styling */
+nav ul {
+  font-size: 1.25em;
+}
 
 .flag {
   display: block;
@@ -28,6 +29,8 @@ p {
   height: 2rem;
 }
 
+
+/* Rental Carousel styling */
 .carous {
   position: relative;
   /* height: 100vh; */
@@ -90,6 +93,7 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Scroll Indicator & styling */
 .scroll {
   position: absolute;
   top: 90%;
@@ -130,6 +134,8 @@ p {
   }
 }
 
+/* Tour card styling */
+
 .card {
   border-radius: 4px;
   background: #fff;
@@ -145,10 +151,18 @@ p {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
+.metal {
+  font-family: 'Metal Mania', serif;
+}
+
+/* Jumbotron styling */
+
 .jumText {
   color: lightblue;
   text-shadow: 2px 2px darkgrey;
 }
+
+/* Homepage styling */
 
 .testTitle {
   top: 50%;
@@ -176,9 +190,7 @@ p {
   color: lightblue;
 }
 
-.metal {
-  font-family: 'Metal Mania', serif;
-}
+
 
 /* My borders showing different div .col,
 div[class^='col-'],
