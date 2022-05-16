@@ -19,12 +19,12 @@ function Home() {
       <Parallax bgImage={par1} strength={200}>
         <Container style={{ height: "55rem" }}>
           <div>
-            <Row className="h-600">
+            <Row >
               <Col className="testTitle md-1">
                 <h1 className="title ">
                   REISE <span className="font-weight-bold">NORGE</span>
                 </h1>
-                <h5 className="subtitle ">personalized journeys through norway</h5>
+                <h5 className="subtitle d-none d-sm-block">personalized journeys through norway</h5>
               </Col>
               <div className="scroll">
                 <span></span>

@@ -11,7 +11,7 @@ h1,
 h2,
 h3,
 li {
-  font-family: 'Josefin Sans', sans-serif;
+ font-family: 'Josefin Sans', sans-serif;
 }
 
 p {
@@ -170,7 +170,8 @@ nav ul {
   height: 55rem;
 }
 .title {
-  font-size: 100px;
+  /* font-size: 100px; */
+  font-size: 5vw;
   position: absolute;
   left: 30%;
   top: 50%;
@@ -183,7 +184,7 @@ nav ul {
 
 .subtitle {
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 62%;
   width: 100%;
   text-align: center;
